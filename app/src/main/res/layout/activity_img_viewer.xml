@@ -5,73 +5,146 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_img_viewer">
-
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="0dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="10dp"
-                android:text="User name"
-                android:textSize="24dp" />
-
-            <ImageView
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="16dp"
-                android:src="@drawable/user"
-                app:srcCompat="@drawable/user" />
-        </RelativeLayout>
-    <GridLayout
-        android:columnCount="1"
-        android:rowCount="2"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="410dp"
-            android:layout_height="300dp"
-            android:src="@drawable/camp"/>
+            android:id="@+id/logo"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/tr_logo" />
+
         <TextView
-            android:text="TITLE"
-            android:textSize="42dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:text="Location"
-            android:textSize="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:text="name of owner"
-            android:textSize="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="232dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="18dp"
+            android:text="User name"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toStartOf="@+id/logo"
+            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
-    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="300dp"
+            app:srcCompat="@drawable/camp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-300dp"
+            android:text="Title"
+            android:textSize="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginTop="8dp"
+            android:text="location"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:text="Name of owner"
+            android:textSize="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:text="Description"
+            android:textSize="20dp" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+        android:id="@+id/user"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.6"
+        app:srcCompat="@drawable/user" />
 
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/user"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+            app:layout_constraintVertical_bias="0.8"
+            app:srcCompat="@drawable/home" />
 
+        <ImageView
+            android:id="@+id/pls"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="126dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:srcCompat="@drawable/user" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
