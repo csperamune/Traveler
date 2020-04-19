@@ -18,7 +18,6 @@
         <activity android:name=".activity_start"></activity>
         <activity android:name=".activity_signin"></activity>
         <activity android:name=".activity_loading"></activity>
-        <activity android:name=".Login"></activity>
         <activity android:name=".MainActivity"></activity>
     </application>
 
