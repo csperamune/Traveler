@@ -67,27 +67,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-300dp"
-            android:text="Title"
+            android:text="@string/img_title"
             android:textSize="50dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="26dp"
             android:layout_marginTop="8dp"
-            android:text="location"
+            android:text="@string/img_location"
             android:textSize="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:layout_marginTop="8dp"
-            android:text="Name of owner"
+            android:text="@string/img_username"
             android:textSize="20dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:layout_marginTop="8dp"
-            android:text="Description"
+            android:text="@string/img_description"
             android:textSize="20dp" />
     </LinearLayout>
 

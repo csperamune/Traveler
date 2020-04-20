@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Traveler</string>
+    <string name="user_name">User name</string>
+    <string name="img_title">Title</string>
+    <string name="img_location">Location</string>
+    <string name="img_username">Name of owner</string>
+    <string name="img_description">Description</string>
+    <string name="user_email">Email address</string>
+    <string name="team">SL Game Arts</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="user_in_username">User name</string>
+    <string name="unser_in_email">Email</string>
+    <string name="user_in_password">Password</string>
+    <string name="user_in_repass">Confirm Password</string>
+    <string name="create_acc">Ccreate an Account</string>
+    <string name="login">Login</string>
+    <string name="get_start">Let\'s get start</string>
 </resources>

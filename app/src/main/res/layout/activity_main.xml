@@ -101,7 +101,7 @@
             android:layout_marginLeft="232dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="18dp"
-            android:text="User name"
+            android:text="@string/user_name"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/scrollView2"
             app:layout_constraintEnd_toStartOf="@+id/logo"
