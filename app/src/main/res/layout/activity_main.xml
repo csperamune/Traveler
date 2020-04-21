@@ -34,7 +34,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:clickable="true"
+            android:clickable="false"
             android:onClick="changeFragment"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/user"
@@ -63,7 +63,7 @@
             android:layout_marginLeft="115dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:clickable="true"
+            android:clickable="false"
             android:onClick="changeFragment"
             app:srcCompat="@drawable/user" />
 
@@ -74,7 +74,7 @@
         android:name="com.example.traveler.fragment_wall"
         android:layout_width="match_parent"
         android:layout_height="670dp"
-        android:layout_marginTop="-730dp" />
+        android:layout_marginTop="-730dp"/>
 
 
 </LinearLayout>
