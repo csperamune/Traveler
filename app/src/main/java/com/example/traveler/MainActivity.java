@@ -32,5 +32,12 @@ public class MainActivity extends AppCompatActivity {
             ft.replace(R.id.fgmntview, fragment);
             ft.commit();
         }
+        if (view == findViewById(R.id.pls)) {
+            fragment = new fragment_update();
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.fgmntview, fragment);
+            ft.commit();
+        }
     }
 }
