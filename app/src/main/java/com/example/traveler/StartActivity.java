@@ -57,7 +57,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (FirebaseAuth.getInstance().getCurrentUser() != null){
-            startActivity(new Intent(StartActivity.this, UserActivity.class));
+            startActivity(new Intent(StartActivity.this, DashActivity.class));
             finish();
         }
     }

@@ -15,7 +15,7 @@ import es.dmoral.toasty.Toasty;
 public class UserActivity extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
-    private Button logout , change;
+    private Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,6 @@ public class UserActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         logout = findViewById(R.id.btnLogout);
-         change = findViewById(R.id.button);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,13 +32,6 @@ public class UserActivity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(UserActivity.this, LoginActivity.class));
                 Toasty.success(UserActivity.this, "Logout Successfully", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        change.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(UserActivity.this, DashActivity.class));
             }
         });
 
