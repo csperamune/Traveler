@@ -3,7 +3,9 @@ package com.example.traveler;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ public class DisplayUser extends AppCompatActivity {
     private TextView profile_name;
     private TextView profile_user_name;
     private TextView txtName;
+    private TextView txtPhone;
     private TextView txtUserName;
     private TextView txtEmail;
     private TextView txtPassword;
@@ -43,6 +46,7 @@ public class DisplayUser extends AppCompatActivity {
         txtPassword = (TextView) findViewById(R.id.txt_password);
         btnUpdate = (Button) findViewById(R.id.btn_update);
         profilePic = findViewById(R.id.profile_image);
+        txtPhone = findViewById(R.id.txt_phone);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -58,12 +62,20 @@ public class DisplayUser extends AppCompatActivity {
                 txtName.setText("Name : "+userProfile.getName());
                 txtUserName.setText("User Name : "+userProfile.getUser_name());
                 txtEmail.setText("Email : "+userProfile.getEmail());
+                txtPhone.setText("Phone : "+userProfile.getPhone_no());
                 txtPassword.setText("Password : "+userProfile.getPassword());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(DisplayUser.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DisplayUser.this, UserUpdate.class));
             }
         });
 

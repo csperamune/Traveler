@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UserActivity">
+    tools:context=".UserUpdate">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,19 +28,20 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/profile_image"
             android:fontFamily="@font/bungee"
-            android:text="@string/img_username"
-            android:textSize="20sp"></TextView>
+            android:text="Your Name"
+            android:textColor="#ffff"
+            android:textSize="26sp"></TextView>
 
-        <TextView
+        <!--<TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/profile_image"
             android:text="user_name"
-            android:textSize="18sp"></TextView>
+            android:textColor="#ffff"
+            android:textSize="18sp"></TextView>-->
 
     </RelativeLayout>
 
@@ -51,6 +52,7 @@
         android:padding="20dp">
 
         <EditText
+            android:id="@+id/etUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -59,6 +61,7 @@
             android:padding="10dp"></EditText>
 
         <EditText
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -67,6 +70,7 @@
             android:padding="10dp"></EditText>
 
         <EditText
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -75,29 +79,44 @@
             android:padding="10dp"></EditText>
 
         <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="Phone"
+            android:padding="10dp"></EditText>
+
+        <EditText
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/edit_text_background"
             android:hint="Password"
+            android:visibility="invisible"
             android:padding="10dp"></EditText>
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/button_background"
             android:padding="10dp"
-            android:text="Update"
+            android:text="Save"
+            android:textAllCaps="false"></Button>
+
+        <Button
+            android:id="@+id/btnChangePw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_background"
+            android:padding="10dp"
+            android:text="Change Password"
             android:textAllCaps="false"></Button>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout" />
 
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UserActivity">
+    tools:context=".UserUpdate">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                    android:id="@+id/img_full_name"
                    android:layout_width="30dp"
                    android:layout_height="30dp"
-                   tools:srcCompat="@tools:sample/avatars" />
+                   android:src="@drawable/icons8_user_16" />
 
                <TextView
                    android:id="@+id/txt_full_name"
@@ -80,7 +80,7 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
                    android:layout_marginLeft="10dp"
-                   android:text="Name"
+                   android:text=""
                    android:textSize="20sp"></TextView>
 
            </LinearLayout>
@@ -101,7 +101,7 @@
                    android:id="@+id/img_username"
                    android:layout_width="30dp"
                    android:layout_height="30dp"
-                   tools:srcCompat="@tools:sample/avatars" />
+                   android:src="@drawable/icons8_user_40" />
 
                <TextView
                    android:id="@+id/txt_username"
@@ -109,7 +109,7 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
                    android:layout_marginLeft="10dp"
-                   android:text="Name"
+                   android:text=""
                    android:textSize="20sp"></TextView>
 
            </LinearLayout>
@@ -130,7 +130,7 @@
                    android:id="@+id/img_email"
                    android:layout_width="30dp"
                    android:layout_height="30dp"
-                   tools:srcCompat="@tools:sample/avatars" />
+                   android:src="@drawable/icons8_email_open_40" />
 
                <TextView
                    android:id="@+id/txt_email"
@@ -138,7 +138,36 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
                    android:layout_marginLeft="10dp"
-                   android:text="Name"
+                   android:text=""
+                   android:textSize="20sp"></TextView>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/phone"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="16dp"
+               android:layout_marginTop="32dp"
+               android:layout_marginEnd="16dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/email">
+
+
+               <ImageView
+                   android:id="@+id/img_phone"
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:src="@drawable/icons8_phone_48" />
+
+               <TextView
+                   android:id="@+id/txt_phone"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_marginLeft="10dp"
+                   android:text=""
                    android:textSize="20sp"></TextView>
 
            </LinearLayout>
@@ -152,14 +181,14 @@
                android:layout_marginEnd="16dp"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/email">
+               app:layout_constraintTop_toBottomOf="@+id/phone">
 
 
                <ImageView
                    android:id="@+id/img_password"
                    android:layout_width="30dp"
                    android:layout_height="30dp"
-                   tools:srcCompat="@tools:sample/avatars" />
+                   android:src="@drawable/icons8_password_16" />
 
                <TextView
                    android:id="@+id/txt_password"
@@ -167,7 +196,7 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
                    android:layout_marginLeft="10dp"
-                   android:text="Name"
+                   android:text=""
                    android:textSize="20sp"></TextView>
 
            </LinearLayout>
@@ -177,10 +206,10 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:layout_marginStart="16dp"
-               android:layout_marginTop="64dp"
+               android:layout_marginTop="40dp"
                android:layout_marginEnd="16dp"
-               android:orientation="vertical"
                android:gravity="bottom"
+               android:orientation="vertical"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toBottomOf="@+id/password">
@@ -191,8 +220,8 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:background="@drawable/button_background"
-                   android:textAllCaps="false"
-                   android:text="Update"></Button>
+                   android:text="Update"
+                   android:textAllCaps="false"></Button>
 
            </LinearLayout>
 
