@@ -28,7 +28,7 @@ public class DisplayUser extends AppCompatActivity {
     private TextView txtUserName;
     private TextView txtEmail;
     private TextView txtPassword;
-    private Button btnUpdate;
+    private Button btnUpdate, btnDeactivate;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -47,6 +47,7 @@ public class DisplayUser extends AppCompatActivity {
         btnUpdate = (Button) findViewById(R.id.btn_update);
         profilePic = findViewById(R.id.profile_image);
         txtPhone = findViewById(R.id.txt_phone);
+        btnDeactivate = (Button) findViewById(R.id.btn_deactivate);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -57,7 +58,7 @@ public class DisplayUser extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
-                profile_name.setText(userProfile.getName());
+               profile_name.setText(userProfile.getName());
                 /*profile_user_name.setText(userProfile.getUser_name());*/
                 txtName.setText("Name : "+userProfile.getName());
                 txtUserName.setText("User Name : "+userProfile.getUser_name());
@@ -76,6 +77,13 @@ public class DisplayUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DisplayUser.this, UserUpdate.class));
+            }
+        });
+
+        btnDeactivate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DisplayUser.this, DeactivateActivity.class));
             }
         });
 

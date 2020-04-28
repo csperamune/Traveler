@@ -28,7 +28,7 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/profile_image"
             android:fontFamily="@font/bungee"
-            android:text="Your Name"
+            android:text="@string/username"
             android:textColor="#ffff"
             android:textSize="26sp"></TextView>
 
@@ -48,14 +48,14 @@
     <LinearLayout
         android:id="@+id/main_linear"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
 
         <GridLayout
             android:id="@+id/grid_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="422dp"
             android:alignmentMode="alignMargins"
             android:columnCount="2"
             android:columnOrderPreserved="false"
@@ -200,7 +200,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
 
         </GridLayout>
 

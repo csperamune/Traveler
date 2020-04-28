@@ -28,7 +28,7 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/profile_image"
             android:fontFamily="@font/bungee"
-            android:text="User Name"
+            android:text="@string/username"
             android:textColor="#ffff"
             android:textSize="26sp"></TextView>
 
@@ -206,7 +206,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:layout_marginStart="16dp"
-               android:layout_marginTop="40dp"
+               android:layout_marginTop="20dp"
                android:layout_marginEnd="16dp"
                android:gravity="bottom"
                android:orientation="vertical"
@@ -221,6 +221,15 @@
                    android:layout_height="wrap_content"
                    android:background="@drawable/button_background"
                    android:text="Update"
+                   android:textAllCaps="false"></Button>
+
+               <Button
+                   android:id="@+id/btn_deactivate"
+                   android:layout_marginTop="16dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@drawable/button_background"
+                   android:text="Deactivate Account"
                    android:textAllCaps="false"></Button>
 
            </LinearLayout>

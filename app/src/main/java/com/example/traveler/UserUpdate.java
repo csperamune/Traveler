@@ -26,7 +26,7 @@ public class UserUpdate extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
 
-    private Button btnSave;
+    private Button btnSave, changePassword;
     private EditText newName, newUserName, newEmail, newPhone, newPassword;
 
     @Override
@@ -45,6 +45,7 @@ public class UserUpdate extends AppCompatActivity {
         newPhone = findViewById(R.id.etPhone);
         newPassword = findViewById(R.id.etPassword);
         btnSave = findViewById(R.id.btnSave);
+        changePassword = findViewById(R.id.btnChangePw);
 
         //create the database refarance
         final DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
@@ -80,6 +81,13 @@ public class UserUpdate extends AppCompatActivity {
                 databaseReference.setValue(userProfile);
                 Toasty.success(UserUpdate.this, "Successfully Updated", Toast.LENGTH_SHORT).show();
                 finish();
+            }
+        });
+
+        changePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserUpdate.this, change_password.class ));
             }
         });
 
