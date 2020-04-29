@@ -1,11 +1,15 @@
 package com.example.traveler;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +26,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import es.dmoral.toasty.Toasty;
@@ -38,6 +46,11 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText confirm_password;
     private TextView login_user;
     private ImageView userImage;
+    private static int PICK_IMAGE = 123;
+    Uri imagePath;
+    private StorageReference storageReference;
+    //create instance for firebase storage
+    private FirebaseStorage firebaseStorage;
 
     //private DatabaseReference mRootRef;
     private FirebaseAuth firebaseAuth;
@@ -48,15 +61,45 @@ public class RegisterActivity extends AppCompatActivity {
     private ProgressDialog pd;
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null){
+            imagePath = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
+                userImage.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        setupUIViews();
 
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
+
+        //create the storage refarance
+        storageReference = firebaseStorage.getReference();
+        //to store the image to corresponding user
+        /*StorageReference myRef1 = storageReference.child(firebaseAuth.getUid());*/
+
+        userImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE);
+            }
+        });
+
         //initialize progress dialog
         pd = new ProgressDialog(this);
-
-        setupUIViews();
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                }
             }
         });
+
 
         /*register = findViewById(R.id.btnRegister);
         user_name = findViewById(R.id.userName);
@@ -209,7 +253,7 @@ public class RegisterActivity extends AppCompatActivity {
          txt_password = password.getText().toString().trim();
          txt_confirm_password = confirm_password.getText().toString().trim();
 
-        if (txt_user_name.isEmpty() || txt_name.isEmpty() || txt_email.isEmpty() || txt_phone.isEmpty() || txt_password.isEmpty() || txt_confirm_password.isEmpty()){
+        if (txt_user_name.isEmpty() || txt_name.isEmpty() || txt_email.isEmpty() || txt_phone.isEmpty() || txt_password.isEmpty() || txt_confirm_password.isEmpty() || imagePath == null){
             pd.dismiss();
             Toasty.error(RegisterActivity.this, "Empty Credentials! ", Toast.LENGTH_SHORT).show();
         }else if(!TextUtils.isEmpty(txt_password) && !TextUtils.isEmpty(txt_confirm_password)){
@@ -228,6 +272,19 @@ public class RegisterActivity extends AppCompatActivity {
      private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        StorageReference imageReferance = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
+         UploadTask uploadTask = imageReferance.putFile(imagePath);
+         uploadTask.addOnFailureListener(new OnFailureListener() {
+             @Override
+             public void onFailure(@NonNull Exception e) {
+                 Toasty.error(RegisterActivity.this, "Upload Failed!", Toast.LENGTH_SHORT).show();
+             }
+         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+             @Override
+             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                 Toasty.success(RegisterActivity.this, "Upload Success!", Toast.LENGTH_SHORT).show();
+             }
+         });
          UserProfile userProfile = new UserProfile(txt_user_name, txt_name, txt_email, txt_phone, txt_password);
         myRef.setValue(userProfile);
      }

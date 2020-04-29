@@ -23,6 +23,7 @@ public class DeactivateActivity extends AppCompatActivity {
     private ProgressDialog pd;
     private FirebaseUser auth;
     private Button btnDelete;
+    private Button btnCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class DeactivateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_deactivate);
 
         btnDelete = findViewById(R.id.btnDelete);
+        btnCancel = findViewById(R.id.btnCancel);
         auth = FirebaseAuth.getInstance().getCurrentUser();
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +52,14 @@ public class DeactivateActivity extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DeactivateActivity.this, DisplayUser.class));
+                finish();
             }
         });
 

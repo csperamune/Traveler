@@ -22,7 +22,9 @@
         android:id="@+id/user_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/user"></ImageView>
+        android:src="@drawable/male_user_avatar"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"></ImageView>
 
     <EditText
         android:id="@+id/userName"

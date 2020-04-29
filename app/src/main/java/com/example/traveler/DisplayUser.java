@@ -77,6 +77,7 @@ public class DisplayUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DisplayUser.this, UserUpdate.class));
+                finish();
             }
         });
 
@@ -84,6 +85,7 @@ public class DisplayUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DisplayUser.this, DeactivateActivity.class));
+                finish();
             }
         });
 
