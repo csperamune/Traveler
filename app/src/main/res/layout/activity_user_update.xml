@@ -14,10 +14,12 @@
         android:padding="24sp">
 
         <ImageView
-            android:id="@+id/profile_image"
+            android:id="@+id/profile_image_update"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
             android:src="@drawable/male_user_avatar"></ImageView>
 
         <TextView
@@ -26,9 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/profile_image"
+            android:layout_toRightOf="@+id/profile_image_update"
             android:fontFamily="@font/bungee"
-            android:text="Your Name"
+            android:text="@string/username"
             android:textColor="#ffff"
             android:textSize="26sp"></TextView>
 
