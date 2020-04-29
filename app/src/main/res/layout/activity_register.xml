@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Traveller Register"
+        android:textSize="40sp"
+        android:textColor="#15a9ee"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/knewave"></TextView>
+
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/user"></ImageView>
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:hint="Username"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:hint="Name"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:hint="Email"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:hint="Phone No"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:hint="Password"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:hint="Confirm Password"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"></EditText>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:padding="10dp"></Button>
+
+    <TextView
+        android:id="@+id/user_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already a User? Login"
+        android:layout_marginTop="15dp"></TextView>
+
+</LinearLayout>
