@@ -46,7 +46,7 @@ public class upload<activity_upload> extends AppCompatActivity {
         up = (Button)findViewById(R.id.upload);
         img = (ImageView)findViewById(R.id.upimg);
         title = (EditText)findViewById(R.id.title);
-        location = (EditText)findViewById(R.id.location);
+        location = (EditText)findViewById(R.id.title);
         imgdata = new imgData();
 
         ch.setOnClickListener(new View.OnClickListener() {
